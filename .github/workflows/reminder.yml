@@ -1,0 +1,15 @@
+name: Daily Reminder Job
+
+on:
+  schedule:
+    - cron: '30 3 * * *'   # 9:00 AM IST (UTC +5:30)
+  workflow_dispatch:        # allows manual trigger
+
+jobs:
+  send-reminders:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Reminder API
+        run: |
+          curl -X GET https://jiorp-telegram-quote-bot.onrender.com/admin/run-reminders
