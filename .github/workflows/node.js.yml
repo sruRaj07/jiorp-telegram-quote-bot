@@ -29,4 +29,8 @@ jobs:
         run: npm ci
 
       - name: Run tests
+<<<<<<< HEAD
         run: npm test
+=======
+        run: npm test
+>>>>>>> 5d30420 (fix: simplify ci workflow)
